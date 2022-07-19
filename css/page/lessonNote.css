@@ -1,0 +1,892 @@
+/* ======== Calendar ======== */
+.my-calendar {
+  width: 360px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.my-calendar .clicked-date {
+  border-radius: 25px;
+  margin-top: 36px;
+  float: left;
+  width: 42%;
+  padding: 46px 0 26px;
+  background: #ddd;
+}
+.my-calendar .calendar-box {
+  width: 100%;
+}
+
+.clicked-date .cal-day {
+  font-size: 24px;
+}
+.clicked-date .cal-date {
+  font-size: 130px;
+}
+
+.ctr-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin-bottom: 50px;
+}
+.ctr-box .btn-cal {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.ctr-box .btn-cal:after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url("../../images/icon/icon_prev01.svg") no-repeat center / 100% auto;
+}
+
+.ctr-box .btn-cal.next:after {
+  content: "";
+  background: url("../../images/icon/icon_next01.svg") no-repeat center / 100% auto;
+}
+.ctr-box .btn-cal.next:active::after,
+.ctr-box .btn-cal.next:focus::after {
+  background: url("../../images/icon/icon_next01_active.svg") no-repeat center / 100% auto;
+}
+.ctr-box .btn-cal.prev:active::after,
+.ctr-box .btn-cal.prev:focus::after {
+  background: url("../../images/icon/icon_prev01_active.svg") no-repeat center / 100% auto;
+}
+.calendar-box select {
+  width: 160px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: #828282;
+  margin-left: auto;
+  margin-bottom: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.cal-table {
+  width: 100%;
+}
+.cal-table th {
+  width: calc(100% / 7);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #828282;
+  vertical-align: middle;
+}
+.cal-table td {
+  height: 52px;
+  vertical-align: middle;
+}
+.cal-table td .day {
+  position: relative;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+.cal-table td .day-active::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  z-index: -1;
+  border: 1.5px solid #375ff0;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.cal-table td .today {
+  color: #ffffff;
+  z-index: 1;
+}
+.cal-table td .today::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #375ff0;
+  z-index: -1;
+}
+
+.cal-table td .has-event:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #ffc107;
+}
+
+.cal-table .week td .day {
+  background: #f5f7fe;
+  width: 100%;
+}
+
+.cal-table .week td:first-child .day {
+  border-radius: 26px 0 0 26px;
+}
+.cal-table .week td:last-child .day {
+  border-radius: 0 26px 26px 0;
+}
+.cal-table td .day.event::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+.cal-table td .day.event_A {
+  color: #ffc734;
+}
+.cal-table td .day.event_A::before {
+  background: #ffc734;
+}
+.cal-table td .day.event_B {
+  color: #6fcf97;
+}
+.cal-table td .day.event_B::before {
+  background: #6fcf97;
+}
+
+.lessonNote {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+.lessonNote .inner {
+  flex: 1;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  max-width: 1920px;
+}
+.select_area {
+  background: #f8f8fa;
+  width: 100%;
+  padding: 32px 20px;
+}
+.select_area .inner {
+  max-width: 1200px;
+  margin: auto;
+}
+.select_area .panel {
+  width: 50%;
+}
+.select_area .panel + .panel {
+  padding-left: 72px;
+  margin-left: 72px;
+  border-left: 1px solid #e0e0e0;
+}
+.select_area .select_panel {
+  display: flex;
+  align-items: center;
+}
+.select_area .select_panel .select2-container {
+  flex: 1;
+}
+.select_area .select_panel .select2-container .select2-selection--single {
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.select_area .select_panel .select2-selection__arrow {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+.select_area .select_panel .btn_search {
+  width: 110px;
+  height: 40px;
+  background: #375ff0;
+  border-radius: 8px;
+  font-family: "S-CoreDream";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-left: 12px;
+}
+
+.select_area .btn_panel h2 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4e5968;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.select_area .btn_panel h2::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: #4e5968;
+  margin-right: 4px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.select_area .btn_panel .btn_list {
+  display: flex;
+  align-items: center;
+}
+.select_area .btn_panel .btn {
+  width: 33.33%;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #375ff0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #375ff0;
+}
+
+.select_area .btn_panel .btn + .btn {
+  margin-left: 20px;
+}
+
+.select_area .btn_panel .btn_exit {
+  border: 1px solid #828282;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.select_area .btn_panel .btn_exit::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  display: block;
+  background: url("../../images/icon/icon_close_B.svg") no-repeat center / 100%;
+}
+
+.lessonNote .content.inner {
+  padding: 80px 0;
+}
+.lessonNote .left_area {
+  border-right: 1px solid #e0e0e0;
+  padding: 0 50px;
+}
+
+.lessonNote .left_area.hide {
+  display: none;
+}
+.lessonNote .class_info {
+  padding: 50px 0;
+}
+.lessonNote .class_info .list_class {
+  position: relative;
+}
+.lessonNote .class_info .list_class::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: calc(100% - 4px);
+  background-color: #e0e0e0;
+}
+
+.lessonNote .class_info .date {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #1a1a1a;
+}
+.lessonNote .class_info .date:before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: url("../../images/icon/icon_clock_24.svg") no-repeat center / 100%;
+  margin-right: 12px;
+}
+.lessonNote .class_info ul {
+  padding-left: 24px;
+  padding-top: 32px;
+}
+.lessonNote .class_info ul li {
+  position: relative;
+}
+.lessonNote .class_info ul li + li {
+  margin-top: 32px;
+}
+.lessonNote .class_info .title_wrap {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #1a1a1a;
+}
+.lessonNote .class_info .title_wrap .time {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1a1a1a;
+}
+.lessonNote .class_info .title_wrap .state {
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #375ff0;
+}
+.lessonNote .class_info .title_wrap .state.absent {
+  color: #f55251;
+}
+.lessonNote .class_info .con_wrap {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.lessonNote .class_info .con_wrap .complete_icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+.lessonNote .class_info .con_wrap .complete_icon:hover .bubble {
+  display: flex;
+}
+.lessonNote .class_info .con_wrap .complete_icon .bubble {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: rgba(26, 26, 26, 0.8);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 14px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 8px 16px;
+}
+
+.lessonNote .class_info .con_wrap .complete_icon .bubble::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 6px;
+  background: url("../../images/icon/icon_bubble.svg") no-repeat;
+  top: -6px;
+  right: 9px;
+}
+
+.lessonNote .class_info .con_wrap .info {
+  display: flex;
+  flex-direction: column;
+}
+.lessonNote .class_info .con_wrap .student_name {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+.lessonNote .class_info .con_wrap .class_name {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1a1a1a;
+}
+
+.lessonNote .class_info .con_wrap .class {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #4e5968;
+  border-left: 1px solid #4e5968;
+  padding-left: 8px;
+  margin-left: 8px;
+}
+.lessonNote .right_area {
+  position: relative;
+  padding: 0 50px;
+  flex: 1;
+}
+.lessonNote .right_area .icon_wide {
+  position: absolute;
+  top: 0;
+  left: -33px;
+  width: 32px;
+  height: 32px;
+  background: #f8f8fa;
+  border-radius: 8px 0px 0px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lessonNote .right_area .icon_wide.wide {
+  transform: rotate(180deg);
+  left: 0;
+}
+.lessonNote .right_area .ctr-box {
+  justify-content: center;
+}
+
+.lessonNote .right_area .ctr-box > div {
+  margin: 0 32px;
+}
+
+.lessonNote .right_area .btn_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lessonNote .right_area .btn_wrap .state_label {
+  padding: 10px 16px;
+  background: #f5f7fe;
+  border: 1px solid #375ff0;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #375ff0;
+}
+.lessonNote .right_area .btn_wrap .state_label.completed::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  background: url("../../images/icon/icon_myClass_active.svg") no-repeat center / 100%;
+  margin-right: 8px;
+}
+.lessonNote .right_area .btn_wrap .state_label.progress {
+  border: 1px solid #f55251;
+  background: #fef9f9;
+  color: #f55251;
+}
+.lessonNote .right_area .btn_wrap button {
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  border: 1px solid #828282;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: -0.02em;
+  color: #4f4f4f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lessonNote .right_area .btn_wrap button + button {
+  margin-left: 12px;
+}
+
+.lessonNote .right_area .class_info {
+  display: none;
+}
+.lessonNote .ifram_area {
+  width: 100%;
+  height: 80vh;
+  max-height: 100vw;
+  border: 1px solid #e0e0e0;
+  margin: 32px 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no_result .my-calendar {
+  border-bottom: none;
+}
+.no_result .right_area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.no_result .right_area h2 {
+  margin: 32px 0 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1a1a1a;
+}
+.no_result .right_area p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.no_result .right_area p span {
+  display: inline;
+  box-shadow: inset 0 -10px 0 #e6ecfd;
+}
+@media all and (max-width: 1200px) {
+  .select_area .panel + .panel {
+    padding-left: 42px;
+    margin-left: 42px;
+  }
+  .lessonNote .content.inner {
+    flex-direction: column;
+    padding: 80px 0;
+  }
+
+  .lessonNote .left_area {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-bottom: 0;
+    border: none;
+  }
+
+  .my-calendar {
+    margin-right: 50px;
+    border-bottom: none;
+    /* border-bottom: 1px solid #e0e0e0; */
+  }
+  .lessonNote .class_info {
+    padding: 0 0 50px;
+    width: calc(100vw - 40px);
+    max-width: 360px;
+  }
+  .lessonNote .right_area {
+    padding: 60px 0 50px;
+    border-top: 1px solid #e0e0e0;
+    margin: 32px 20px 0;
+  }
+  .lessonNote .right_area .icon_wide {
+    display: none;
+  }
+}
+
+@media all and (max-width: 860px) {
+  .select_area .inner {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .select_area .panel {
+    width: 100%;
+    max-width: 500px;
+  }
+  .select_area .panel + .panel {
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 50px;
+    border-left: none;
+  }
+
+  .lessonNote .left_area {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .my-calendar {
+    margin-right: 0;
+  }
+  .lessonNote .class_info {
+    padding: 50px 0 0;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .lessonNote .content.inner {
+    padding-top: 0;
+  }
+  .my-calendar.hide .ctr-box {
+    margin-bottom: 0;
+    width: auto;
+    display: inline-block;
+  }
+
+  .my-calendar.hide .ctr-box .btn-cal {
+    display: none;
+  }
+
+  .my-calendar.hide .ctr-box > div {
+    display: flex;
+    align-items: center;
+    height: 32px;
+  }
+  .my-calendar.hide .ctr-box > div::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: url("../../images/icon/icon_calendar.svg") no-repeat center / auto;
+    margin-right: 8px;
+  }
+  .my-calendar.hide .cal-table thead th {
+    height: 34px;
+  }
+  .my-calendar.hide .cal-table tbody tr:not(.week) {
+    display: none;
+  }
+  .my-calendar.hide .calendar-box select {
+    float: right;
+  }
+  .my-calendar.hide .cal-table .week td .day {
+    background: none;
+  }
+  .my-calendar .btn_calendar {
+    width: 20px;
+    height: 20px;
+    background: url("../../images/icon/icon_arrow_hide.svg") no-repeat center / auto;
+    margin: auto;
+    cursor: pointer;
+    margin-top: 24px;
+  }
+  .my-calendar.hide .btn_calendar {
+    background: url("../../images/icon/icon_arrow_show.svg") no-repeat center / auto;
+  }
+
+  .lessonNote .left_area {
+    padding: 0;
+  }
+
+  .my-calendar {
+    width: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 20px 20px;
+    padding: 50px 20px 12px;
+  }
+
+  .lessonNote .class_info ul li {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
+    padding: 20px 0;
+  }
+  .lessonNote .class_info .title_wrap {
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid #e0e0e0;
+    padding: 0 20px;
+  }
+  .lessonNote .class_info .title_wrap .state {
+    margin: 4px 0 0;
+  }
+  .lessonNote .class_info .con_wrap {
+    position: static;
+    border: none;
+    margin: 0;
+    padding: 0 20px;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .select_area .select_panel .select2-container .select2-selection--single {
+    border-radius: 8px 0px 0px 8px;
+  }
+  .select_area .select_panel .btn_search {
+    border-radius: 0px 8px 8px 0px;
+    margin-left: 0;
+  }
+  .select_area .btn_panel .btn_list {
+    flex-direction: column;
+  }
+  .select_area .btn_panel .btn {
+    width: 100%;
+  }
+  .select_area .btn_panel .btn + .btn {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+
+  .ctr-box {
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+  .ctr-box .btn-cal {
+    width: 24px;
+    height: 24px;
+    margin: 0 24px;
+  }
+  .ctr-box .btn-cal:after {
+    width: 24px;
+    height: 24px;
+  }
+
+  .calendar-box select {
+    width: 109px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 24px;
+  }
+
+  .cal-table th {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .cal-table td {
+    height: 34px;
+  }
+  .cal-table td .day {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .cal-table .week td .day {
+    height: 18px;
+  }
+  .cal-table td .day.event::before {
+    width: 4px;
+    height: 4px;
+    top: calc(100% + 4px);
+  }
+  .lessonNote .class_info {
+    padding: 0 0 0 12px;
+  }
+  .lessonNote .class_info .date {
+    top: 0;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .lessonNote .class_info ul {
+    padding-top: 48px;
+    margin-top: 32px;
+  }
+  .lessonNote .class_info ul li {
+    padding: 12px 0;
+  }
+  .lessonNote .class_info ul li + li {
+    margin-top: 8px;
+  }
+
+  .lessonNote .class_info .title_wrap {
+    font-size: 12px;
+    line-height: 14px;
+    padding: 0 12px;
+  }
+
+  .lessonNote .class_info .title_wrap .state {
+    font-weight: 500;
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .lessonNote .class_info .con_wrap {
+    padding: 0 12px;
+  }
+  .lessonNote .class_info .con_wrap .profile {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+  }
+
+  .lessonNote .class_info .con_wrap .teacher_name {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .lessonNote .class_info .con_wrap .class_name {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .lessonNote .class_info .con_wrap .class {
+    font-size: 11px;
+    line-height: 13px;
+  }
+  .lessonNote .right_area {
+    position: relative;
+    padding: 50px 0 0;
+  }
+  .lessonNote .right_area .ctr-box {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+  }
+
+  .lessonNote .right_area .ctr-box > div {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .lessonNote .right_area .btn_wrap .state_label {
+    padding: 8px 12px;
+    max-height: 32px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .lessonNote .right_area .btn_wrap button {
+    width: 32px;
+    height: 32px;
+  }
+  .lessonNote .ifram_area {
+    height: 100vw;
+    margin: 20px 0 0;
+  }
+
+  .no_result .right_area .icon_warn {
+    width: 60px;
+  }
+  .no_result .right_area h2 {
+    margin: 24px 0 12px;
+  }
+}

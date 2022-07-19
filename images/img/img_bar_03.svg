@@ -1,0 +1,26 @@
+<svg width="400" height="20" viewBox="0 0 400 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M391 11H13V9H391V11Z" fill="#BDBDBD"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M387 10C387 10.5523 386.552 11 386 11H201C200.448 11 200 10.5523 200 10C200 9.44772 200.448 9 201 9H386C386.552 9 387 9.44772 387 10Z" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M200 10C200 10.5523 199.552 11 199 11H17C16.4477 11 16 10.5523 16 10C16 9.44772 16.4477 9 17 9H199C199.552 9 200 9.44772 200 10Z" fill="#375FF0"/>
+<circle cx="10" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 10C0 15.5228 4.47715 20 10 20C15.5228 20 20 15.5228 20 10H0Z" fill="#1A1A1A"/>
+<circle cx="10" cy="10" r="6" fill="white"/>
+<circle cx="10" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 10C0 15.5228 4.47715 20 10 20C15.5228 20 20 15.5228 20 10H0Z" fill="#1A1A1A"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M14.6883 6.2774C15.0774 6.67368 15.1061 7.34829 14.7523 7.78419L9.99042 13.6508C9.64389 14.0778 9.05706 14.1187 8.66592 13.7432L5.3326 10.5432C4.93324 10.1598 4.88699 9.48644 5.2293 9.03916C5.5716 8.59188 6.17284 8.54008 6.5722 8.92346L9.20323 11.4492L13.3429 6.34916C13.6967 5.91326 14.2991 5.88113 14.6883 6.2774Z" fill="white"/>
+<circle cx="200" cy="10" r="6" fill="#BDBDBD"/>
+<circle cx="200" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M190 10C190 15.5228 194.477 20 200 20C205.523 20 210 15.5228 210 10H190Z" fill="#1A1A1A"/>
+<circle cx="200" cy="10" r="6" fill="white"/>
+<circle cx="200" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M190 10C190 15.5228 194.477 20 200 20C205.523 20 210 15.5228 210 10H190Z" fill="#1A1A1A"/>
+<circle cx="200" cy="10" r="6" fill="white"/>
+<circle cx="200" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M190 10C190 15.5228 194.477 20 200 20C205.523 20 210 15.5228 210 10H190Z" fill="#1A1A1A"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M204.688 6.2774C205.077 6.67368 205.106 7.34829 204.752 7.78419L199.99 13.6508C199.644 14.0778 199.057 14.1187 198.666 13.7432L195.333 10.5432C194.933 10.1598 194.887 9.48644 195.229 9.03916C195.572 8.59188 196.173 8.54008 196.572 8.92346L199.203 11.4492L203.343 6.34916C203.697 5.91326 204.299 5.88113 204.688 6.2774Z" fill="white"/>
+<circle cx="390" cy="10" r="6" fill="#BDBDBD"/>
+<circle cx="390" cy="10" r="6" fill="#BDBDBD"/>
+<circle cx="390" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M380 10C380 15.5228 384.477 20 390 20C395.523 20 400 15.5228 400 10H380Z" fill="#1A1A1A"/>
+<circle cx="390" cy="10" r="6" fill="white"/>
+</svg>

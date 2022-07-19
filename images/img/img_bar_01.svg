@@ -1,0 +1,8 @@
+<svg width="400" height="20" viewBox="0 0 400 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M391 11H13V9H391V11Z" fill="#BDBDBD"/>
+<circle cx="10" cy="10" r="10" fill="#375FF0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0 10C0 15.5228 4.47715 20 10 20C15.5228 20 20 15.5228 20 10H0Z" fill="#1A1A1A"/>
+<circle cx="10" cy="10" r="6" fill="white"/>
+<circle cx="200" cy="10" r="6" fill="#BDBDBD"/>
+<circle cx="390" cy="10" r="6" fill="#BDBDBD"/>
+</svg>
