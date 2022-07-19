@@ -1009,3 +1009,25 @@
   color: #828282;
   border: 1px solid #e0e0e0;
 }
+
+@media all and (max-width: 540px) {
+  .pop_ct {
+    padding: 32px;
+  }
+  .pop_ct p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .pop_ct .btn_wrap {
+    margin-top: 32px;
+  }
+  .pop_ct .btn_wrap .btn {
+    height: 40px;
+  }
+  .pop_ct1 .btn_wrap .btn + .btn {
+    margin-left: 8px;
+  }
+  .pop_ct2 .btn_wrap .btn + .btn {
+    margin-top: 12px;
+  }
+}
