@@ -392,8 +392,12 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  cursor: pointer;
 }
-
+.lessonNote .class_info .con_wrap.on {
+  border: 1px solid #375ff0;
+  background: #f5f7fe;
+}
 .lessonNote .class_info .con_wrap .complete_icon {
   position: absolute;
   top: 12px;
@@ -434,12 +438,16 @@
   display: flex;
   flex-direction: column;
 }
+
 .lessonNote .class_info .con_wrap .student_name {
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
   color: #1a1a1a;
   margin-bottom: 8px;
+}
+.lessonNote .class_info .con_wrap.on .student_name {
+  color: #375ff0;
 }
 .lessonNote .class_info .con_wrap .class_name {
   font-weight: 500;
